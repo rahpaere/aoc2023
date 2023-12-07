@@ -1,4 +1,3 @@
-%{
 	#include <assert.h>
 	#include <stdbool.h>
 	#include <stdio.h>
@@ -7,7 +6,6 @@
 	int digit;
 	int calibration = 0;
 	void seen(int d);
-%}
 
 %%
 
@@ -22,6 +20,7 @@
 8|eight	seen(8);
 9|nine	seen(9);
 
+		/* forwards and backwards cases can overlap! */
 oneight		seen(1); seen(8);
 twone		seen(2); seen(1);
 threeight	seen(3); seen(8);
